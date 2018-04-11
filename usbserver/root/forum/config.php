@@ -1,11 +1,11 @@
 <?php
- 	$database_host = 'localhost';
- 	$database_port = '3307';
- 	$database_name = 'forum';
- 	$database_username = 'root';
- 	$database_password = 'usbw';
+ define('DBHOST','localhost');
+define('DBUSER','root');
+define('DBPASS','usbw');
+define('DBNAME','forum');
 
- 	$mysqli = new mysqli($database['host'], $database['username'], $database['password'], $database['name']);
+$db = new PDO("mysql:host=".DBHOST.";port=3307;dbname=".DBNAME, DBUSER, DBPASS);
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 //set timezone
 date_default_timezone_set('Asia/Manila');
